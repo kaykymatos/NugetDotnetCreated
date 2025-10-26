@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Kayky Matos",
+  "classifications": [ "C#", "SQL Server", "Backend" ],
+  "identity": "DefaultReturn.Template",
+  "name": "Template com configuração SQL",
+  "shortName": "drtemplate",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "DefaultReturn.Template",
+  "preferNameDirectory": true,
+  "symbols": {
+    "projectName": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "DefaultReturn.Template",
+      "fileRename": "DefaultReturn.Template"
+    },
+    "dbServer": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "SERVER_PLACEHOLDER"
+    },
+    "dbName": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "DB_PLACEHOLDER"
+    },
+    "dbUser": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "USER_PLACEHOLDER"
+    },
+    "dbPassword": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "PASSWORD_PLACEHOLDER"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "projectName != null",
+          "rename": {
+            "DefaultReturn.Template.csproj": "{projectName}.csproj"
+          }
+        }
+      ]
+    }
+  ]
+}
